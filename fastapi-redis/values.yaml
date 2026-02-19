@@ -1,0 +1,36 @@
+api:
+  name: python-api
+  image:
+    repository: python-api
+    tag: latest
+    pullPolicy: Never
+  replicas: 1
+  containerPort: 8000
+  service:
+    port: 80
+  ingress:
+    enabled: true
+    host: localhost
+    path: /api/?(.*)
+
+redis:
+  name: redis
+  image: redis:7
+  port: 6379
+  password: "redis-123"
+  storage:
+    size: 1Gi
+
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
+
+
+service:
+  type: ClusterIP
+  port: 80
+
+
+
