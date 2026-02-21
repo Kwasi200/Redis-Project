@@ -4,7 +4,7 @@ app:
     repository: python-api
     tag: latest
     pullPolicy: Never
-  replicas: 2
+  replicas: 3
   containerPort: 8000
   service:
     port: 80
