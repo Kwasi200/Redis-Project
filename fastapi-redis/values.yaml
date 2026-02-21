@@ -1,4 +1,4 @@
-api:
+app:
   name: python-api
   image:
     repository: python-api
