@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: python-api
+spec:
+  hosts:
+  - python-api
+  http:
+  - route:
+    - destination:
+        host: python-api
+        subset: v1
+      weight: 80
+    - destination:
+        host: python-api
+        subset: v2
+      weight: 20
+
+
